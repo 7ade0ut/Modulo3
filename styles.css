@@ -1,0 +1,315 @@
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+/* Navbar estilos con botones */
+.navbar {
+  background-color: #333;
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.nav-btn {
+  background-color: #919191bd;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-btn:hover {
+  background-color: #5a08a2d2;
+}
+
+/* Botón para mostrar/ocultar conversaciones */
+.toggle-btn {
+  display: none;
+  background-color: #919191bd;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+}
+
+/* Estilos de la lista de conversaciones */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Sidebar de conversaciones recientes */
+.chat-sidebar {
+  background-color: #7f06e9d2;
+  color: white;
+  padding: 1rem;
+}
+
+/* Estilo para las imágenes de perfil redondeadas */
+.profile-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background-color: white; /* Fondo blanco */
+}
+
+.conversation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.conversation.unread .name {
+  font-weight: bold;
+}
+
+.conversation:hover {
+  background-color: #5a08a2d2;
+}
+
+
+/* Estilo para el contenedor del buscador */
+.search-container {
+  margin-bottom: 15px;
+}
+
+#searchInput {
+  width: 90%;
+  align-items: flex-end;
+  padding: 9px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+#searchInput::placeholder {
+  color: #aaa;
+}
+
+
+
+
+.conversation-actual {
+  padding: 10px;
+}
+
+/* Imagen de perfil pequeña en la ventana de conversación actual */
+
+.chat-header__avatar{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background-color: white;
+
+}
+
+/* Dropdown menu estilos */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: #000000;
+  color: white;
+  padding: 10px 15px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #5a08a2d2;
+}
+
+/* En pantallas pequeñas (móviles), la lista de conversaciones estará oculta inicialmente */
+@media (max-width: 768px) {
+  .chat-sidebar {
+      display: none;
+  }
+  .chat-window2 {
+    
+    background-image: url('https://i.pinimg.com/enabled_hi/1200x/95/26/f0/9526f08c1e26dcb4f6b9afd9d76af8ab.jpg'); /* Ruta de la imagen */
+    background-size: cover; /* Ajustar la imagen para cubrir todo el fondo */
+    background-position: center; /* Centrar la imagen */
+    filter: grayscale(100%); /* Aplicar filtro blanco y negro */
+    z-index: 0; /* Asegurarse de que esté detrás del contenido */
+
+}
+
+  /* Mostrar el botón para colapsar/expandir la lista en móviles */
+  .toggle-btn {
+      display: block;
+  }
+
+  .chat-sidebar.visible {
+      display: block;
+  }
+}
+
+.messages {
+  height: 400px;
+  overflow-y: auto;
+  padding: 10px;
+  display: flex;
+  gap: 10px; /* Espacio entre los mensajes */
+  flex-direction: column;
+}
+
+.message {
+  display: inline-block;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 6px 0;
+  position: relative;
+  word-wrap: break-word; /* Permitir que el texto se ajuste */
+}
+
+
+
+.sent {
+  text-align: right;
+  background-color: #ffffff88;
+
+}
+
+.received {
+  text-align: left;
+  background-color: #7b7b7bca;
+}
+
+.message-input {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: #ddd;
+}
+
+.message-input input {
+  flex-grow: 1;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  margin-right: 1rem;
+}
+
+.send-btn {
+  background-color: #2c0338bd;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .chat-container {
+      flex-direction: row;
+  }
+
+  .chat-sidebar {
+      display: block;
+      width: 25%;
+  }
+
+  .chat-window {
+    width: 75%;
+  }
+
+  .chat-window2 {
+      width: 100%;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('https://i.pinimg.com/enabled_hi/1200x/95/26/f0/9526f08c1e26dcb4f6b9afd9d76af8ab.jpg'); /* Ruta de la imagen */
+      background-size: cover; /* Ajustar la imagen para cubrir todo el fondo */
+      background-position: center; /* Centrar la imagen */
+      filter: grayscale(100%); /* Aplicar filtro blanco y negro */
+      z-index: 0; /* Asegurarse de que esté detrás del contenido */
+  
+  }
+
+  .nav-button {
+      display: none;
+  }
+}
+
+/* Tamaño Hora del Chat Lista Izquierda */
+
+.date {
+    font-size: 9px; /* Ajusta el tamaño según lo necesites */
+}
+
+/* Dimension del Logo Cabecera de Página */
+
+.logo {
+  width: 200px; /* Ajusta el tamaño según lo necesites */
+  height: auto; /* Mantiene la proporción de la imagen */
+  border-radius: 10%; /* Cambia a '10px' para bordes redondeados o '50%' para un círculo */
+  display: block; /* Opcional: ayuda a centrar la imagen si es necesario */
+  margin: 0 auto; /* Opcional: centra la imagen en su contenedor */
+}
+
+
+/* Tamaño Hora del Chat Derecha */
+
+.time 
+{
+  font-size: 10px; /* Ajusta el tamaño según lo necesites */
+}
+
+
+
+
+/* Check del chat actual */
+
+.message__check {
+    font-size: 0.9em; /* Tamaño de fuente para el check */
+    color: gray; /* Color del check */
+    margin-top: 2px; /* Espacio entre la hora y el check */
+    align-self: flex-end; /* Alinea el check a la derecha */
+}

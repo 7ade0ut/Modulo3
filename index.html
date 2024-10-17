@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat de Soporte</title>
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+
+
+
+
+  <!-- Barra de navegación con botones -->
+  <header>
+
+    <!-- Logo Chat-->
+
+    <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="Imagenes/Título.jpg" alt="Logo" width="" height="" class="logo">
+
+        </a>
+      </div>
+    </nav>
+
+
+
+    <!--Termina aca -->
+    <nav class="navbar">
+      <button class="nav-btn">Página principal</button>
+      <button class="nav-btn">Preguntas frecuentes</button>
+      <button class="nav-btn">Manuales y tutoriales</button>
+      <button class="nav-btn">Noticias</button>
+      <button class="nav-btn">Calendario</button>
+      <button class="nav-btn">Administración de perfil de usuario</button>
+      <button class="nav-btn">Organigrama de la empresa</button>
+      <button class="nav-btn">Chat para vendedores y equipo de soporte</button>
+    </nav>
+  </header>
+
+  <!-- Botón para colapsar/expandir la lista de conversaciones (solo móvil) -->
+  <button id="toggle-conversations-btn" class="toggle-btn">Chats</button>
+
+  <!-- Contenedor del chat -->
+  <div class="chat-container">
+    <!-- Lista de conversaciones recientes -->
+    <aside class="chat-sidebar" id="chatSidebar">
+      <h4>Conversaciones Recientes</h4>
+
+      <!-- Campo de búsqueda (sin funcionalidad) -->
+      <div class="search-container">
+        <input type="text" placeholder="Buscar en conversaciones..." id="searchInput">
+      </div>
+
+
+
+
+
+      <ul id="conversationList" style="padding-inline-start: 0px !important;">
+        <li class="conversation unread">
+          <img src="https://stardewvalleywiki.com/mediawiki/images/f/f8/Maru.png" alt="Usuario 1" class="profile-img">
+          <span class="name">Maru</span>
+          <span class="date" id="lastMessageTime">10:45 12/10/2024</span>
+          <!-- Cambia el ID para actualizar este valor -->
+        </li>
+        <li class="conversation">
+          <img src="https://stardewvalleywiki.com/mediawiki/images/8/88/Abigail.png" alt="Usuario 2"
+            class="profile-img">
+          <span class="name">Abigail</span>
+          <span class="date">10:50 12/10/2024</span>
+        </li>
+        <li class="conversation">
+          <img src="https://stardewvalleywiki.com/mediawiki/images/7/7e/Pierre.png" alt="Usuario 3" class="profile-img">
+          <span class="name">Pierre</span>
+          <span class="date">09:30 12/10/2024</span>
+        </li>
+        <li class="conversation">
+          <img src="https://stardewvalleywiki.com/mediawiki/images/2/2b/Lewis.png" alt="Usuario 4" class="profile-img">
+          <span class="name">Lewis</span>
+          <span class="date">11:50 11/10/2024</span>
+        </li>
+        <li class="conversation">
+          <img src="https://stardewvalleywiki.com/mediawiki/images/5/52/Marnie.png" alt="Usuario 5" class="profile-img">
+          <span class="name">Marnie</span>
+          <span class="date">08:50 10/10/2024</span>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Ventana de conversación actual -->
+    <main class="chat-window">
+
+
+      <div class="conversation-actual">
+        <img src="https://stardewvalleywiki.com/mediawiki/images/f/f8/Maru.png" alt="Usuario 1" class="profile-img">
+        <span class="name"><strong>Maru</strong></span>
+        <div <p class="chat-header__status"><em>En línea</em></p>
+
+        </div>
+      </div>
+
+      <div class="chat-window2">
+        <div class="chat-header">
+        </div>
+
+        <div class="messages">
+          <div class="message sent">
+            <p>Holi, ¿cómo va todo por allá? 👀</p>
+            <span class="time">10:50 12/10/2024</span>
+            <span class="message__check">&#10003;</span> <!-- Check 1: Mensaje enviado -->
+          </div>
+          <div class="message received">
+            <p>Todo ok👍🏻, ¿y tú cómo estás?</p>
+            <span class="time">10:54 12/10/2024</span>
+            <span class="message__check">&#10003;&#10003;</span> <!-- Check 2: Mensaje leído -->
+
+          </div>
+        </div>
+        <footer class="message-input">
+
+          <!-- Dropdown para adjuntar archivos -->
+          <div class="dropdown">
+            <button class="dropbtn">📎Adjuntar</button>
+            <div class="dropdown-content">
+              <a href="#">🖼️Imagen</a>
+              <a href="#">📹Video</a>
+              <a href="#">📄Documento</a>
+            </div>
+
+          </div>
+          <input type="text" placeholder="Escribe un mensaje..." id="messageInput">
+          <button class="send-btn" id="sendBtn">⬆ Enviar</button>
+        </footer>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
