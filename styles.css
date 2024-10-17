@@ -214,12 +214,19 @@ body {
 .sent {
   text-align: right;
   background-color: #ffffff88;
+  min-width: 20%;
+  max-width: 70%;
+  align-self: flex-end;
+
 
 }
 
 .received {
   text-align: left;
   background-color: #7b7b7bca;
+  min-width: 20%;
+  max-width: 70%;
+  align-self: flex-start;
 }
 
 .message-input {
